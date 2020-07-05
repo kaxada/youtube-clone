@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+const Header = props => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -165,7 +165,7 @@ export default function PrimarySearchAppBar() {
   //this section handles the search section actions
   const [searchTerm, setSearchTerm] = React.useState('')
   const handleChange = e => setSearchTerm(e.target.value);
-  const handleSubmit = (e, props) => {
+  const handleSubmit = e => {
         props.onFormSubmit(searchTerm);
         e.preventDefault();
     }
@@ -247,3 +247,5 @@ export default function PrimarySearchAppBar() {
     </div>
   );
 }
+
+export default Header;
